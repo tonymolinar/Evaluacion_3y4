@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" styleClass="fondo2" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2">
+   <children>
+      <Label alignment="CENTER" layoutX="920.0" layoutY="150.0" prefHeight="50.0" prefWidth="250.0" styleClass="labels" text="BESTSELLER" textFill="#6b3920">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="combobest" layoutX="945.0" layoutY="210.0" onAction="#imgbest" prefHeight="30.0" prefWidth="200.0" />
+      <Label alignment="CENTER" layoutX="920.0" layoutY="430.0" prefHeight="50.0" prefWidth="250.0" styleClass="labels" text="LITERATURA JUVENIL" textFill="#6b3920">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="combojuvenil" layoutX="945.0" layoutY="490.0" onAction="#imgjuv" prefHeight="30.0" prefWidth="200.0" />
+      <Label alignment="CENTER" layoutX="920.0" layoutY="290.0" prefHeight="50.0" prefWidth="250.0" styleClass="labels" text="LITERATURA CLÁSICA" textFill="#6b3920">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="comboclasica" layoutX="950.0" layoutY="350.0" onAction="#imgclas" prefHeight="30.0" prefWidth="200.0" />
+      <Label alignment="CENTER" layoutX="920.0" layoutY="50.0" prefHeight="50.0" prefWidth="250.0" styleClass="titulo" text="Categorías " textFill="#b54936">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="viewlibro" fitHeight="400.0" fitWidth="260.0" layoutX="610.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="txtcantidad" alignment="CENTER" layoutX="734.0" layoutY="493.0" prefHeight="50.0" prefWidth="130.0" promptText="Ejemplares" styleClass="ingresar">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="608.0" layoutY="32.0" text="Precio unitario $">
+         <font>
+            <Font name="Bell MT" size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtprecio" alignment="CENTER" editable="false" layoutX="818.0" layoutY="27.0" prefHeight="44.0" prefWidth="60.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btagregar" layoutX="614.0" layoutY="497.0" mnemonicParsing="false" onAction="#agregar" styleClass="agregar" text="Añadir" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <ListView fx:id="lista" layoutX="22.0" layoutY="81.0" prefHeight="200.0" prefWidth="500.0" styleClass="view" />
+      <Button fx:id="btretirar" layoutX="56.0" layoutY="294.0" mnemonicParsing="false" onAction="#retirar" styleClass="retirar" text="Retirar" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="51.0" layoutY="24.0" prefHeight="50.0" prefWidth="150.0" styleClass="titulo" text="Orden" textFill="#366fb2">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="btmandar" layoutX="307.0" layoutY="293.0" mnemonicParsing="false" onAction="#mandar" styleClass="mandar" text="Mandar a cobro">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="62.0" layoutY="390.0" prefHeight="50.0" prefWidth="219.0" styleClass="titulo" text="Ordenes en fila" textFill="#09bf2e">
+         <font>
+            <Font name="Bell MT" size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txttotal" alignment="CENTER" editable="false" layoutX="294.0" layoutY="460.0" prefHeight="44.0" prefWidth="105.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtorden" alignment="CENTER" editable="false" layoutX="295.0" layoutY="390.0" prefHeight="44.0" prefWidth="60.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label alignment="CENTER" layoutX="51.0" layoutY="458.0" prefHeight="44.0" prefWidth="231.0" styleClass="titulo" text="Total a pagar $" textFill="#858518">
+         <font>
+            <Font name="Bell MT" size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="btpagar" layoutX="307.0" layoutY="520.0" mnemonicParsing="false" onAction="#pagar" styleClass="fields" text="Pagar" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

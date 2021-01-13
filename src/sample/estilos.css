@@ -1,0 +1,47 @@
+.fondo{
+-fx-background-image: url("./Img/libros.jpg");
+}
+
+.fondo2{
+-fx-background-image: url("./Img/libros2.jpg");
+-fx-background-size: cover;
+
+}
+
+.fields{
+-fx-background-color: #D49749;
+-fx-background-radius: 10px;
+}
+
+.ingresar{
+-fx-background-color: #B1D1D3;
+-fx-background-radius: 20px;
+}
+
+.titulo{
+-fx-background-color: #E8EFEF;
+-fx-background-radius: 40px;
+}
+
+.labels{
+-fx-background-color: #C48740;
+-fx-background-radius: 10px;
+}
+
+.agregar{
+-fx-background-color: #40C445;
+-fx-background-radius: 30px;
+}
+.retirar{
+-fx-background-color: #CA2323;
+-fx-background-radius: 30px;
+}
+
+.mandar{
+-fx-background-color: orange;
+-fx-background-radius: 30px;
+}
+
+.view{
+-fx-font: 20px Tahoma;
+}
