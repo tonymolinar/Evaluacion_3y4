@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" styleClass="fondo2" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2">
+<AnchorPane prefHeight="600.0" prefWidth="1240.0" styleClass="fondo2" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2">
    <children>
       <Label alignment="CENTER" layoutX="920.0" layoutY="150.0" prefHeight="50.0" prefWidth="250.0" styleClass="labels" text="BESTSELLER" textFill="#6b3920">
          <font>
@@ -56,46 +55,52 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <ListView fx:id="lista" layoutX="22.0" layoutY="81.0" prefHeight="200.0" prefWidth="500.0" styleClass="view" />
-      <Button fx:id="btretirar" layoutX="56.0" layoutY="294.0" mnemonicParsing="false" onAction="#retirar" styleClass="retirar" text="Retirar" textFill="WHITE">
+      <ListView fx:id="lista" layoutX="22.0" layoutY="137.0" prefHeight="200.0" prefWidth="500.0" styleClass="view" />
+      <Button fx:id="btretirar" layoutX="56.0" layoutY="350.0" mnemonicParsing="false" onAction="#retirar" styleClass="retirar" text="Retirar" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="51.0" layoutY="24.0" prefHeight="50.0" prefWidth="150.0" styleClass="titulo" text="Orden" textFill="#366fb2">
+      <Label alignment="CENTER" layoutX="24.0" layoutY="83.0" prefHeight="50.0" prefWidth="150.0" styleClass="titulo" text="Orden" textFill="#366fb2">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Button fx:id="btmandar" layoutX="307.0" layoutY="293.0" mnemonicParsing="false" onAction="#mandar" styleClass="mandar" text="Mandar a cobro">
+      <Button fx:id="btmandar" layoutX="307.0" layoutY="349.0" mnemonicParsing="false" onAction="#mandar" styleClass="mandar" text="Mandar a cobro">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="62.0" layoutY="390.0" prefHeight="50.0" prefWidth="219.0" styleClass="titulo" text="Ordenes en fila" textFill="#09bf2e">
+      <Label alignment="CENTER" layoutX="62.0" layoutY="414.0" prefHeight="50.0" prefWidth="219.0" styleClass="titulo" text="Ordenes en fila" textFill="#09bf2e">
          <font>
             <Font name="Bell MT" size="30.0" />
          </font>
       </Label>
-      <TextField fx:id="txttotal" alignment="CENTER" editable="false" layoutX="294.0" layoutY="460.0" prefHeight="44.0" prefWidth="105.0">
+      <TextField fx:id="txttotal" alignment="CENTER" editable="false" layoutX="294.0" layoutY="484.0" prefHeight="44.0" prefWidth="105.0">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtorden" alignment="CENTER" editable="false" layoutX="295.0" layoutY="390.0" prefHeight="44.0" prefWidth="60.0">
+      <TextField fx:id="txtorden" alignment="CENTER" editable="false" layoutX="295.0" layoutY="414.0" prefHeight="44.0" prefWidth="60.0">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <Label alignment="CENTER" layoutX="51.0" layoutY="458.0" prefHeight="44.0" prefWidth="231.0" styleClass="titulo" text="Total a pagar $" textFill="#858518">
+      <Label alignment="CENTER" layoutX="51.0" layoutY="482.0" prefHeight="44.0" prefWidth="231.0" styleClass="titulo" text="Total a pagar $" textFill="#858518">
          <font>
             <Font name="Bell MT" size="30.0" />
          </font>
       </Label>
-      <Button fx:id="btpagar" layoutX="307.0" layoutY="520.0" mnemonicParsing="false" onAction="#pagar" styleClass="fields" text="Pagar" textFill="WHITE">
+      <Button fx:id="btpagar" layoutX="307.0" layoutY="544.0" mnemonicParsing="false" onAction="#pagar" styleClass="fields" text="Pagar" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
+      <ListView fx:id="lista2" layoutX="319.0" layoutY="17.0" prefHeight="100.0" prefWidth="240.0" />
+      <Button layoutX="195.0" layoutY="20.0" mnemonicParsing="false" onAction="#ordenar" text="Ordenar por precio" />
+      <TextField fx:id="numerobuscar" alignment="CENTER" layoutX="187.0" layoutY="53.0" prefHeight="25.0" prefWidth="111.0" promptText="Cantidad a buscar" />
+      <Button layoutX="213.0" layoutY="83.0" mnemonicParsing="false" onAction="#buscar" text=" Buscar libro" />
+      <ListView fx:id="lista3" layoutX="461.0" layoutY="419.0" prefHeight="130.0" prefWidth="105.0" />
+      <Button layoutX="461.0" layoutY="560.0" mnemonicParsing="false" onAction="#ordenar2" text="Ordenar pedidos" />
    </children>
 </AnchorPane>

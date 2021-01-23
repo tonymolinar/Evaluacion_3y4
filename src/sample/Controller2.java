@@ -33,8 +33,8 @@ public class Controller2 {
 
     @FXML ImageView viewlibro;
     @FXML TextField txtprecio,txtcantidad,txttotal;
-    @FXML TextField txtorden;
-    @FXML ListView lista;
+    @FXML TextField txtorden,numerobuscar;
+    @FXML ListView lista,lista2,lista3;
     @FXML Button btagregar,btretirar;
     @FXML Button btpagar,btmandar;
 
@@ -45,6 +45,12 @@ public class Controller2 {
 
     Stack<Libro> pilalibro = new Stack<>();
     Queue<Double> colaorden = new LinkedList<>();
+
+    Libro[] arregloLibro = new Libro[5];
+    Double[] arregloOrden = new Double[5];
+
+    int contador=0;
+    int contador2=0;
 
     @FXML protected void initialize(){
 
@@ -123,6 +129,18 @@ public class Controller2 {
             txtcantidad.setText("");
             txtprecio.setText("");
             btmandar.setDisable(false);
+
+            if (contador<arregloLibro.length){
+                lista2.getItems().add(pilalibro.peek().titulo+" "+pilalibro.peek().precio);
+                arregloLibro[contador]=new Libro(libro,0,pilalibro.peek().precio);
+                contador++;
+            }else{
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Registro superior lleno");
+                alert.show();
+            }
+
+
         }
 
 
@@ -156,6 +174,16 @@ public class Controller2 {
         txttotal.setText(colaorden.peek()+"");
         btpagar.setDisable(false);
         if (pilalibro.isEmpty()){btmandar.setDisable(true);}
+
+        if (contador2<arregloOrden.length){
+            lista3.getItems().add(suma);
+            arregloOrden[contador2]= suma;
+            contador2++;
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Registro de ordenes lleno");
+            alert.show();
+        }
     }
 
     public void pagar(ActionEvent event){
@@ -165,5 +193,71 @@ public class Controller2 {
         if (colaorden.isEmpty()){btpagar.setDisable(true);
             txtorden.setText("");
             txttotal.setText("");}
+    }
+
+    public void ordenar(ActionEvent event){
+        if (contador==arregloLibro.length){
+            Libro[] arreglo=Ordenamiento.burbuja(arregloLibro);
+            lista2.getItems().clear();
+            for (int x=0;x<arreglo.length;x++){
+                lista2.getItems().add(arreglo[x].titulo+" "+arreglo[x].precio);
+            }
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Favor de llenar el registro");
+            alert.show();
+        }
+    }
+
+    public void buscar(ActionEvent event){
+
+        if (contador==arregloLibro.length){
+            Libro[] arreglo=Ordenamiento.burbuja(arregloLibro);
+            Busqueda busqueda = new Busqueda();
+            if (numerobuscar.getText().equals("")){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Ingresar una cantidad para buscar");
+                alert.show();
+            }else {
+                int indice = busqueda.binaria(arreglo,arreglo.length,Double.parseDouble(numerobuscar.getText()));
+                if (indice>=0){
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setHeaderText("Libro encontrado");
+                    alert.setContentText("El precio (cantidad) pertenece a el libro: "+arreglo[indice].titulo);
+                    alert.show();
+                }else{
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setHeaderText("Libro no encontrado");
+                    alert.setContentText("El precio (cantidad) no se encuentra en el registro");
+                    alert.show();
+                }
+                lista2.getItems().clear();
+                for (int x=0;x<arreglo.length;x++){
+                    lista2.getItems().add(arreglo[x].titulo+" "+arreglo[x].precio);
+                }
+                lista2.getSelectionModel().select(indice);
+            }
+
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Favor de llenar el registro");
+            alert.show();
+        }
+
+    }
+
+    public void ordenar2(ActionEvent event){
+        if (contador2==arregloOrden.length){
+            Double[] arreglo=Ordenamiento.shell(arregloOrden);
+            lista3.getItems().clear();
+            for (int x=0;x<arreglo.length;x++){
+                lista3.getItems().add(arreglo[x]);
+            }
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Favor de llenar el registro");
+            alert.show();
+        }
+
     }
 }
